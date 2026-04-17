@@ -5,6 +5,7 @@ import { MdOutlineTextsms } from "react-icons/md";
 import { FiVideo } from "react-icons/fi";
 import { MyFriendContext } from "./Context";
 import { toast } from "react-toastify";
+import NotFound from "./NotFound";
 
 const Details = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const Details = () => {
   const { setTimelineFriends } = useContext(MyFriendContext);
 
   if (!expectedFriends) {
-    return <div className="p-10 text-center">Friend not found</div>;
+    return <div className="p-10 text-center"><NotFound></NotFound></div>;
   }
 
   const handleTimeline = (type) => {
