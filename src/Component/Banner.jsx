@@ -3,39 +3,49 @@ import React from "react";
 const Banner = () => {
   return (
     <div className="bg-[#F8FAFC]">
-      <div className="ml-[245px] mr-[245px] pt-[80px] pb-[40px] text-center">
-        <div className="text-center max-w-2xl m-auto">
-          <h1 className="text-4xl font-bold text-gray-800">
+      <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 pt-12 md:pt-16 pb-10 text-center">
+        
+        {/* TEXT SECTION */}
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
             Friends to keep close in your life
           </h1>
-          <p className="text-gray-500 mt-4">
+
+          <p className="text-gray-500 mt-4 text-sm sm:text-base">
             Your personal shelf of meaningful connections. Browse, tend, and
             nurture the relationships that matter most.
           </p>
 
-          <button className="mt-6 bg-green-700 text-white px-6 py-2 rounded-md hover:bg-green-800 transition">
+          <button className="mt-6 bg-green-700 text-white px-5 py-2 text-sm sm:text-base rounded-md hover:bg-green-800 transition">
             + Add a Friend
           </button>
         </div>
 
-        <div className="flex justify-between gap-[24px] mt-[40px]">
-          <div className="w-[259.5px] h-[137px] shadow bg-white rounded-xl items-center flex flex-col justify-center ">
-            <h1 className="text-2xl font-semibold">10</h1>
-            <p className="text-gray-500">Total Friends</p>
+        {/* STATS SECTION */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          
+          <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center">
+            <h1 className="text-xl sm:text-2xl font-semibold">10</h1>
+            <p className="text-gray-500 text-sm">Total Friends</p>
           </div>
 
-          <div className="w-[259.5px] h-[137px] shadow bg-white rounded-xl items-center flex flex-col justify-center ">
-            <h1 className="text-2xl font-semibold">3</h1>
-            <p className="text-gray-500">On Track</p>
+          <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center">
+            <h1 className="text-xl sm:text-2xl font-semibold">3</h1>
+            <p className="text-gray-500 text-sm">On Track</p>
           </div>
-          <div className="w-[259.5px] h-[137px] shadow bg-white rounded-xl items-center flex flex-col justify-center ">
-            <h1 className="text-2xl font-semibold">6</h1>
-            <p className="text-gray-500">Need Attention</p>
+
+          <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center">
+            <h1 className="text-xl sm:text-2xl font-semibold">6</h1>
+            <p className="text-gray-500 text-sm">Need Attention</p>
           </div>
-          <div className="w-[259.5px] h-[137px] shadow bg-white rounded-xl items-center flex flex-col justify-center ">
-            <h1 className="text-2xl font-semibold">12</h1>
-            <p className="text-gray-500">Interactions This Month</p>
+
+          <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center">
+            <h1 className="text-xl sm:text-2xl font-semibold">12</h1>
+            <p className="text-gray-500 text-sm">
+              Interactions This Month
+            </p>
           </div>
+
         </div>
       </div>
     </div>
