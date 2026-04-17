@@ -1,16 +1,29 @@
-# React + Vite
+# KeenKeeper — Personal Relationship Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Description
+KeenKeeper is a personal relationship management application designed to help users maintain and strengthen meaningful connections. It allows users to track interactions such as calls, texts, and video chats, monitor relationship health, and receive insights through simple analytics. The goal is to ensure no important relationship is neglected over time.
 
-Currently, two official plugins are available:
+## 🛠️ Technologies Used
+- React.js  
+- React Router  
+- Context API (Global State Management)  
+- Tailwind CSS  
+- Recharts (for data visualization)  
+- React Icons  
+- React Toastify  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features
 
-## React Compiler
+### 1. Interaction Tracking Timeline
+Users can log interactions (Call, Text, Video) with friends, which are stored in a timeline to provide a clear history of communication.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Analytics Dashboard
+Visual charts display interaction distribution, helping users understand communication patterns and engagement levels.
 
-## Expanding the ESLint configuration
+### 3. Relationship Health Monitoring
+Each contact includes:
+- Days since last interaction  
+- Contact goal (in days)  
+- Next due date  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This helps users stay proactive and maintain consistent communication with important people.
