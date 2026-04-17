@@ -14,27 +14,38 @@ const Friend = () => {
   }, []);
 
   return (
-    <div className="bg-[#F8FAFC] p-4 pl-[245px] pr-[245px] pb-[80px]">
-      <h3 className="font-bold text-xl mb-3">Your Friends</h3>
+    <div className="bg-[#F8FAFC] px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 py-10">
+      
+      {/* TITLE */}
+      <h3 className="font-bold text-xl mb-6 text-center sm:text-left">
+        Your Friends
+      </h3>
 
-      <div className="grid grid-cols-4 gap-4">
+      {/* GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {friends.map((friend) => (
           <Link key={friend.id} to={`/details/${friend.id}`}>
-            <div className="w-64 bg-white rounded-xl p-6 text-center shadow-sm">
+            
+            <div className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition duration-200">
+              
+              {/* IMAGE */}
               <img
                 src={friend.picture}
                 alt="profile"
                 className="w-20 h-20 mx-auto rounded-full object-cover mb-4"
               />
 
+              {/* NAME */}
               <h2 className="text-lg font-semibold text-gray-800">
                 {friend.name}
               </h2>
 
+              {/* DAYS */}
               <p className="text-sm text-gray-500 mb-3">
-                {friend.days_since_contact}
+                {friend.days_since_contact} days ago
               </p>
 
+              {/* TAGS */}
               <div className="flex gap-2 justify-center flex-wrap">
                 {friend.tags.map((tag, i) => (
                   <span
@@ -46,6 +57,7 @@ const Friend = () => {
                 ))}
               </div>
 
+              {/* STATUS */}
               <div className="mt-4">
                 <button
                   className={`text-sm px-4 py-1 rounded-full shadow ${
@@ -59,6 +71,7 @@ const Friend = () => {
                   {friend.status}
                 </button>
               </div>
+
             </div>
           </Link>
         ))}
