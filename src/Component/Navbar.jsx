@@ -11,12 +11,12 @@ const Navbar = () => {
   return (
     <div className="px-[80px]">
       <div className="navbar bg-base-100 flex justify-between items-center">
-        {/* Logo */}
+      
         <div>
           <img src={navImg} alt="Logo" className="h-10" />
         </div>
 
-        {/* Nav Buttons */}
+      
         <div className="flex gap-6 items-center">
           <NavLink to="/"
             onClick={() => setActive("home")}

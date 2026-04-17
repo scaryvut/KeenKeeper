@@ -28,12 +28,8 @@ const Footer = () => {
           <p>© 2026 KeenKeeper. All rights reserved.</p>
 
           <div className="flex gap-6 justify-center mt-2 md:mt-0">
-            <span>
-              Privacy Policy
-            </span>
-            <span>
-              Terms of Service
-            </span>
+            <span>Privacy Policy</span>
+            <span>Terms of Service</span>
             <span>Cookies</span>
           </div>
         </div>

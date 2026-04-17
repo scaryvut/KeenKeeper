@@ -5,7 +5,6 @@ const Banner = () => {
     <div className="bg-[#F8FAFC]">
       <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 pt-12 md:pt-16 pb-10 text-center">
         
-        {/* TEXT SECTION */}
         <div className="max-w-2xl mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
             Friends to keep close in your life
@@ -21,7 +20,6 @@ const Banner = () => {
           </button>
         </div>
 
-        {/* STATS SECTION */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
           
           <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center">

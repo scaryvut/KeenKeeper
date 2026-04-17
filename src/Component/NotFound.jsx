@@ -5,10 +5,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="text-center max-w-xl">
-        {/* Big 404 */}
         <h1 className="text-8xl font-extrabold text-gray-800">404</h1>
-
-        {/* Message */}
         <h2 className="text-2xl font-semibold mt-4 text-gray-700">
           Page Not Found
         </h2>
@@ -17,7 +14,7 @@ const NotFound = () => {
           The page you're looking for doesn’t exist or has been moved.
         </p>
 
-        {/* Buttons */}
+    
         <div className="mt-6 flex justify-center gap-4">
           <Link
             to="/"

@@ -4,7 +4,6 @@ const NoActivity = () => {
     return (
         <div className="bg-[#F8FAFC] min-h-screen p-10">
 
-  {/* HEADER */}
   <div className="max-w-3xl mx-auto mb-6">
     <h2 className="text-2xl font-bold text-gray-800 mb-4">
       Timeline
@@ -15,7 +14,6 @@ const NoActivity = () => {
     </select>
   </div>
 
-  {/* EMPTY STATE */}
   <div className="max-w-3xl mx-auto">
     <div className="bg-white p-10 rounded-xl shadow-sm text-center">
 
