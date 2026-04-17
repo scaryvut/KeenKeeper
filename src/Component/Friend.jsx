@@ -9,41 +9,85 @@ const getFriends = async () => {
 
 const Friend = () => {
   const [friends, setFriends] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  const timer = setTimeout(() => {
-    getFriends().then((data) => {
-      setFriends(data);
-      setLoading(false);
-    });
-  }, 2000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      getFriends().then((data) => {
+        setFriends(data);
+        setLoading(false);
+      });
+    }, 1000);
 
-  return () => clearTimeout(timer); // ✅ prevent memory leak
-}, []);
+    return () => clearTimeout(timer);
+  }, []);
 
- if (loading) {
+  if (loading) {
+    return (
+      <div className="min-h-screen flex justify-center bg-[#F8FAFC]">
+        <PacmanLoader color="#36d7b7" />
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen flex justify-center bg-[#F8FAFC]">
-      <PacmanLoader />
-    </div>
-  );
-}
+    <div className="bg-[#F8FAFC] px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 py-10">
+      
+    
+      <h3 className="font-bold text-xl mb-6 text-center sm:text-left">
+        Your Friends
+      </h3>
 
-  return (
-    <div className="bg-[#F8FAFC] px-4 sm:px-6 md:px-10 lg:px-20 py-10">
-      <h3 className="font-bold text-xl mb-6">Your Friends</h3>
-
+    
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {friends.map((friend) => (
           <Link key={friend.id} to={`/details/${friend.id}`}>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+            
+            <div className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition duration-200">
               <img
                 src={friend.picture}
-                className="w-20 h-20 mx-auto rounded-full mb-4"
-                alt=""
+                alt="profile"
+                className="w-20 h-20 mx-auto rounded-full object-cover mb-4"
               />
-              <h2 className="font-semibold">{friend.name}</h2>
+
+            
+              <h2 className="text-lg font-semibold text-gray-800">
+                {friend.name}
+              </h2>
+
+            
+              <p className="text-sm text-gray-500 mb-3">
+                {friend.days_since_contact} days ago
+              </p>
+
+        
+              <div className="flex gap-2 justify-center flex-wrap">
+                {friend.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="bg-green-200 px-2 py-1 rounded-full text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* STATUS */}
+              <div className="mt-4">
+                <button
+                  className={`text-sm px-4 py-1 rounded-full shadow ${
+                    friend.status === "active"
+                      ? "bg-green-500 text-white"
+                      : friend.status === "overdue"
+                      ? "bg-red-500 text-white"
+                      : "bg-orange-400 text-white"
+                  }`}
+                >
+                  {friend.status}
+                </button>
+              </div>
+
             </div>
           </Link>
         ))}
