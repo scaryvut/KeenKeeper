@@ -11,7 +11,6 @@ const Details = () => {
   const friends = useLoaderData();
 
   const expectedFriends = friends.find((friend) => friend.id == id);
-
   const { setTimelineFriends } = useContext(MyFriendContext);
 
   if (!expectedFriends) {
@@ -30,25 +29,18 @@ const Details = () => {
 
     setTimelineFriends((prev) => [...prev, newEntry]);
 
-      if (type === "Call") {
-    toast.success(`Called ${expectedFriends.name}`);
-  }
-
-  if (type === "Text") {
-    toast.success(`Texted ${expectedFriends.name}`);
-  }
-
-  if (type === "Video") {
-    toast.success(`Video called ${expectedFriends.name}`);
-  }
-
+    if (type === "Call") toast.success(`Called ${expectedFriends.name}`);
+    if (type === "Text") toast.success(`Texted ${expectedFriends.name}`);
+    if (type === "Video") toast.success(`Video called ${expectedFriends.name}`);
   };
 
   return (
-    <div className="bg-[#F8FAFC] p-10 flex justify-center">
-      <div className="w-full max-w-5xl grid grid-cols-3 gap-6">
+    <div className="bg-[#F8FAFC] px-4 sm:px-6 md:px-10 lg:px-20 py-8">
+      
+      {/* MAIN GRID */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        {/* LEFT PROFILE + ACTIONS */}
+        {/* LEFT SIDE */}
         <div className="space-y-4">
 
           {/* PROFILE CARD */}
@@ -63,7 +55,7 @@ const Details = () => {
               {expectedFriends.name}
             </h2>
 
-            <div className="flex justify-center gap-2 text-xs">
+            <div className="flex justify-center gap-2 text-xs flex-wrap">
               <span className="bg-red-100 text-red-600 px-2 py-0.5 rounded-full">
                 {expectedFriends.status}
               </span>
@@ -101,16 +93,15 @@ const Details = () => {
               Delete
             </button>
           </div>
-
         </div>
 
-        {/* RIGHT SECTION */}
-        <div className="col-span-2 space-y-4">
+        {/* RIGHT SIDE */}
+        <div className="lg:col-span-2 space-y-4">
 
-          {/* TOP STATS */}
-          <div className="grid grid-cols-3 gap-4">
+          {/* STATS */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-              <h3 className="text-xl font-bold text-green-700">
+              <h3 className="text-lg sm:text-xl font-bold text-green-700">
                 {expectedFriends.days_since_contact}
               </h3>
               <p className="text-xs text-gray-500">
@@ -119,7 +110,7 @@ const Details = () => {
             </div>
 
             <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-              <h3 className="text-xl font-bold text-green-700">
+              <h3 className="text-lg sm:text-xl font-bold text-green-700">
                 {expectedFriends.goal}
               </h3>
               <p className="text-xs text-gray-500">
@@ -128,7 +119,7 @@ const Details = () => {
             </div>
 
             <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-              <h3 className="text-md font-semibold">
+              <h3 className="text-sm sm:text-md font-semibold">
                 {expectedFriends.next_due_date}
               </h3>
               <p className="text-xs text-gray-500">
@@ -137,8 +128,8 @@ const Details = () => {
             </div>
           </div>
 
-          {/* RELATIONSHIP GOAL */}
-          <div className="bg-white p-4 rounded-xl shadow-sm flex justify-between items-center">
+          {/* GOAL */}
+          <div className="bg-white p-4 rounded-xl shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div>
               <h4 className="font-medium text-gray-800">
                 Relationship Goal
@@ -162,7 +153,7 @@ const Details = () => {
               Quick Check-In
             </h4>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
               <button
                 onClick={() => handleTimeline("Call")}
@@ -170,7 +161,6 @@ const Details = () => {
               >
                 <LuPhoneCall className="text-lg" />
                 <span className="text-sm mt-1">Call</span>
-                
               </button>
 
               <button
@@ -193,7 +183,6 @@ const Details = () => {
           </div>
 
         </div>
-
       </div>
     </div>
   );
